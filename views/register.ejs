@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="css/user.css">
+
+<section class="login-block">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+          <form class="md-float-material form-material" action="#" method="POST">
+              <input type="hidden" name="errors" value="<%= errors %> ">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <div class="auth-box card">
+                  <div class="card-block">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h3 class="text-center heading">Register</h3>
+                              <%- include("./partials/messages"); %>
+                                </div>
+                            </div>
+                            <div class="form-group form-primary"> <input type="text" class="form-control" name="name" value="<%= typeof name != 'undefined' ? name : '' %>" placeholder="Display name" id="first_name"> </div>
+                            <div class="form-group form-primary"> <input type="text" class="form-control" name="phone" value="<%= typeof phone != 'undefined' ? phone : '' %>" placeholder="10-digit (IN) Phone Number" id="phone"> </div>
+                            <div class="form-group form-primary"> <input type="text" class="form-control" name="email" value="<%= typeof email != 'undefined' ? email : '' %>" placeholder="Email" id="email"> </div>
+                            <div class="form-group form-primary"> <input type="password" class="form-control" name="password" placeholder="Password" value="<%= typeof password != 'undefined' ? password : '' %>" id="password"> </div>
+                            <div class="form-group form-primary"> <input type="password" class="form-control" name="password2" placeholder="Repeat password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" id="password_confirm"> </div>
+                            <div class="row">
+                                <div class="col-md-12">  <button type="submit" class="btn btn-success btn-md btn-block waves-effect text-center m-b-20"><i class="fa fa-lock"></i> Signup Now </button>
+                                </div>
+                            </div>
+                            <!-- <div class="or-container">
+                                <div class="line-separator"></div>
+                                <div class="or-label">or</div>
+                                <div class="line-separator"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"> <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="/auth/google"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Signup Using Google</a> </div>
+                            </div>  -->
+                            <br>
+                            <p class="text-inverse text-center">Already have an account? <a href="/login" data-abc="true">Login</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body text-center">
+        <h2 class="effect"></h2>
+        <h1><i class="fas fa-check fa-3x"></i></h1>
+        <h5 class="my-3 text-center effect2">ZaKK Authentications...</h5>
+        <a href="/register" class="my-2 btn btn-primary btn-block mb-2"
+          >Register</a
+        >
+        <a href="/login" class="btn btn-secondary btn-block">Login</a>
+      </div>
+    </div>
+</div>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script defer>
+    var randomStuff = ["Bienvenue", "Welcome", "नमस्ते", "Bienvenidos"];
+    var target;
+    var loadContentIndex = 0;
+  
+    $(function() {
+      target = $('.effect'); //Set the target div...
+      loadContent(); //Initiate it once on page load...
+      window.setInterval(loadContent, 2000); //And set it to work every 2000ms (or 2s).
+    });
+  
+      function loadContent() {
+          target.fadeOut(function() { //Once fade out is complete...
+              target.text(randomStuff[loadContentIndex]); //Change the text
+              target.fadeIn(); //Fade back in.
+      });
+  
+      loadContentIndex++; //Increase the array counter.
+      if (randomStuff.length == loadContentIndex) { //If reached the end of the array...
+          loadContentIndex = 0; //Reset the counter :)
+      }
+  }
+  
+</script>

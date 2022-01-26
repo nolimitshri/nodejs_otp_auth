@@ -1,0 +1,23 @@
+<% if(typeof (user.isVerifiedEmail) != 'undefined' || typeof (user.isVerifiedPhone) != 'undefined') { %>
+    <% if (!user.isVerified){ %>
+        <div class="text-center alert alert-warning mt-4 alert-dismissible fade show" role="alert">
+            Please Verify your account <a href="/sendVerificationEmail">Send Verification Email</a>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <% } %>
+    <% } %>
+    
+<% if(typeof emailSent != 'undefined') { %>
+        <% if(emailSent) { %>
+            <div class="text-center alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Success: </strong>
+                Email sent successfully ( Please do check our Email in Spam Section ) !!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+        <% } %>
+<% } %>
+
